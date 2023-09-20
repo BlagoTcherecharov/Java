@@ -1,0 +1,33 @@
+package javaapplication135;
+import java.util.Scanner;
+
+public class Average 
+{
+
+    public static void main(String[] args) 
+    {
+    
+       int n;
+       double average = 0;
+       int counter = 0;
+       
+       Scanner scanner = new Scanner(System.in);
+       
+       System.out.println("Enter a number: ");
+       n = scanner.nextInt();
+       
+       while(n > 0)
+       {
+            average += n;
+            System.out.println("Enter a number: ");
+            n = scanner.nextInt();
+            counter++;
+       }
+       System.out.println("Average: " + average/counter);
+    }
+    
+}
+
+    
+
+ 
