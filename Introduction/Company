@@ -1,0 +1,41 @@
+package com.mycompany.java;
+import java.util.Scanner;
+
+
+public class Company
+{
+
+    public static void main(String[] args) 
+    {
+       String company_name, adress, phone, fax, website;
+       String first_name, last_name, manager_phone;
+       
+       Scanner scanner = new Scanner(System.in);
+       
+       System.out.println("Enter the name of the company: ");
+       company_name = scanner.nextLine();
+       System.out.println("Enter the adress of the company: ");
+       adress = scanner.nextLine();
+       System.out.println("Enter the phone number of the company: ");
+       phone = scanner.nextLine();
+       System.out.println("Enter the fax of the company: ");
+       fax = scanner.nextLine();
+       System.out.println("Enter the website of the company: ");
+       website = scanner.nextLine();
+       System.out.println("Enter the first name of the manager: ");
+       first_name = scanner.nextLine();
+       System.out.println("Enter the last name of the manager: ");
+       last_name = scanner.nextLine();
+       System.out.println("Enter the phone number of the manager: ");
+       manager_phone = scanner.nextLine();
+       
+       System.out.println("Name of company: " + company_name);
+       System.out.println("Adress of company: " + adress);
+       System.out.println("Phone number of company: " + phone);
+       System.out.println("Fax of company: " + fax);
+       System.out.println("Website of company: " + website);
+       System.out.println("Manager's name: " + first_name + " " + last_name);
+       System.out.println("Manager's phone number: " + manager_phone);
+       
+    }
+}
