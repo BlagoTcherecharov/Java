@@ -1,6 +1,5 @@
 package javaapplication135;
 import java.util.Scanner;
-import java.text.DecimalFormat;
 
 public class JavaApplication135 
 {
