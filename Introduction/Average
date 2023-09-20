@@ -1,0 +1,31 @@
+package javaapplication135;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class Average
+{
+
+    public static void main(String[] args) 
+    {
+    
+       int n;
+       double average = 0;
+       
+       Scanner scanner = new Scanner(System.in);
+       
+       System.out.println("Enter a number: ");
+       n = scanner.nextInt();
+       
+       for(int i = 1; i <= n; i ++)
+       {
+           average += i;
+       }
+       DecimalFormat f = new DecimalFormat("00.00");
+       System.out.println("Average: " + f.format(average/n));
+    }
+    
+}
+
+    
+
+ 
