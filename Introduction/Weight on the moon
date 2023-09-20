@@ -1,0 +1,19 @@
+package com.mycompany.java;
+import java.util.Scanner;
+
+
+public class Java
+{
+
+    public static void main(String[] args) 
+    {
+       double weight;
+       
+       Scanner scanner = new Scanner(System.in);
+       
+       System.out.println("Enter your weight: ");
+       weight = scanner.nextDouble();
+       
+       System.out.println("Your weight on the moon would be: " + (weight = weight -(weight * 0.17)) + " kg");
+    }
+}
