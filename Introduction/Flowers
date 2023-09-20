@@ -1,0 +1,49 @@
+
+package javaapplication135;
+import java.util.Scanner;
+
+public class Flowers {
+
+    
+    public static void main(String[] args) 
+    {
+    
+       int orchid, hyacinth, rose, cactus, tulip; 
+       double phone;
+       
+       Scanner scanner = new Scanner(System.in);
+       
+       System.out.println("Enter number of orchid: ");
+       orchid = scanner.nextInt();
+       System.out.println("Enter number of hyacinth: ");
+       hyacinth = scanner.nextInt();
+       System.out.println("Enter number of rose: ");
+       rose = scanner.nextInt();
+       System.out.println("Enter number of cactus: ");
+       cactus = scanner.nextInt();
+       System.out.println("Enter number of tulip: ");
+       tulip = scanner.nextInt();
+       System.out.println("Enter the price of the phone: ");
+       phone = scanner.nextDouble();
+       
+       
+       double sum = (orchid * 13.25) + (hyacinth * 5) + (rose * 8.5) + (cactus * 8) + (tulip * 3);
+       sum = sum - (sum * 0.07);
+       
+       
+       if(sum >= phone)
+       {
+           sum -= phone;
+           System.out.println("She is left with " + Math.floor(sum) + " leva.");
+       }
+       else
+       {
+           phone -= sum;
+           System.out.println("She will have to borrow " + Math.ceil(phone) + " leva.");
+       }
+    }
+    
+}
+
+    
+
