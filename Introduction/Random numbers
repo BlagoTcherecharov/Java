@@ -1,0 +1,36 @@
+package com.mycompany.java;
+import java.util.Scanner;
+
+public class RandomNums
+{
+
+    public static void main(String[] args) 
+    {
+    
+       int sum = 0;
+       int product = 1;
+       int counter = 0;
+       int n;
+       
+       Scanner scanner = new Scanner(System.in);
+       
+       System.out.println("Enter a number: ");
+       n = scanner.nextInt();
+       
+       while(n <= -10 || n >= 10)
+       {
+            if(n > 0)
+            {
+                sum += n;
+                product *= n;
+                counter++;
+            }
+            System.out.println("Enter a number: ");
+            n = scanner.nextInt();
+       }
+       System.out.println("Sum is: " + sum);
+       System.out.println("Product is: " + product);
+       System.out.println("Positive numbers: " + counter);
+    }
+    
+}
