@@ -1,0 +1,35 @@
+package com.mycompany.java;
+import java.util.Scanner;
+
+public class Java
+{
+
+    public static void main(String[] args) 
+    {
+       int square;
+       int s1, s2;
+       int r;
+       int b, h;
+       
+       Scanner scanner = new Scanner(System.in);
+       
+       System.out.println("Enter side of the square: ");
+       square = scanner.nextInt();
+       System.out.println("Enter base of the rectangle: ");
+       s1 = scanner.nextInt();
+       System.out.println("Enter height of the rectangle: ");
+       s2 = scanner.nextInt();
+       System.out.println("Enter radius of the circle: ");
+       r = scanner.nextInt();
+       System.out.println("Enter base of the triangle: ");
+       b = scanner.nextInt();
+       System.out.println("Enter height of the triangle: ");
+       h = scanner.nextInt();
+       
+       System.out.println("Area of the square: " + square * square);
+       System.out.println("Area of the rectangle: " + s1 * s2);
+       System.out.println("Area of the circle: " + Math.PI * r * r);
+       System.out.println("Area of the triangle: " + b * h / 2);
+    }
+    
+}
