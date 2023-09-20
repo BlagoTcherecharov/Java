@@ -1,0 +1,30 @@
+package javaapplication135;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class Multiplication
+{
+
+    public static void main(String[] args) 
+    {
+    
+       double number;
+       
+       Scanner scanner = new Scanner(System.in);
+       do
+       {
+           System.out.println("Enter number: ");
+           number= scanner.nextDouble();
+           if(number < 0)
+               break;
+           DecimalFormat f = new DecimalFormat("00.00");
+           System.out.println(f.format(number*2));
+       }while(number >= 0);
+       
+       System.out.println("Negative number!");
+    }
+    
+}
+
+    
+
