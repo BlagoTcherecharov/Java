@@ -1,0 +1,29 @@
+package javaapplication135;
+import java.util.Scanner;
+
+public class SumDigits
+{
+
+    public static void main(String[] args) 
+    {
+    
+       int n, digit = 0;
+       
+       Scanner scanner = new Scanner(System.in);
+       
+       System.out.println("Enter a number: ");
+       n = scanner.nextInt();
+       
+       while(n > 0)
+       {
+           digit += n%10;
+           n /= 10;
+       }
+       System.out.println("Sum of digits: " + digit);
+    }
+    
+}
+
+    
+
+ 
