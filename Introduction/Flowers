@@ -28,7 +28,7 @@ public class Flowers {
        
        
        double sum = (orchid * 13.25) + (hyacinth * 5) + (rose * 8.5) + (cactus * 8) + (tulip * 3);
-       sum = sum - (sum * 0.07);
+       sum = sum + (sum * 0.07);
        
        
        if(sum >= phone)
