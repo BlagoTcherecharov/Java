@@ -1,0 +1,19 @@
+package com.mycompany.java;
+import java.util.Scanner;
+
+public class Power
+{
+
+    public static void main(String[] args) 
+    {
+       int n;
+       
+       Scanner scanner = new Scanner(System.in);
+       
+       System.out.println("Enter a number: ");
+       n = scanner.nextInt();
+       
+       System.out.println("2 exponant " + n + " = " + Math.pow(2, n));
+    }
+    
+}
