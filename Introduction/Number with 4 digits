@@ -1,0 +1,39 @@
+package com.mycompany.java;
+import java.util.Scanner;
+
+
+public class Digits
+{
+    static void SumOfDigits(int num)
+    {
+        int sum = 0;
+        
+        while(num > 0)
+        {
+            sum += num % 10;
+            num /= 10;
+        }
+        
+        System.out.println("Sum of digits is " + sum);
+    }
+    
+    public static void main(String[] args) 
+    {
+       int num;
+       
+       Scanner scanner = new Scanner(System.in);
+       
+       System.out.println("Enter a 4 digit number: ");
+       num = scanner.nextInt();
+       
+       int first = num / 1000 % 10;
+       int second = num / 100 % 10;
+       int third = num / 10 % 10;
+       int fourth = num % 10;
+       
+       SumOfDigits(num);
+       System.out.println("Reverse order of the number is " + fourth + third + second + first);
+       System.out.println("Number with last digit as first digit is " + fourth + first + second + third);
+       System.out.println("Number with exchanged middle digits is " + first + third + second + fourth);
+    }
+}
