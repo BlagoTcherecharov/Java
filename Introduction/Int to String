@@ -1,0 +1,22 @@
+package com.mycompany.java;
+import java.util.Scanner;
+
+
+public class IntToString
+{
+    
+    public static void main(String[] args) 
+    {
+       String[] num_english = {"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
+       //Doesn't work due to unknown symbols
+       //String[] num_bulgarian = {"Нула", "Едно", "Две", "Три", "Четири", "Пет", "Шест", "Седем", "Осем", "Девет"};
+       
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Input number: ");
+        int num = scanner.nextInt();
+        
+        System.out.println(num_english[num]);
+        //System.out.println(num_bulgarian[num]);
+    }
+}
