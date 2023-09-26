@@ -1,0 +1,27 @@
+package javaapplication133;
+import java.util.Scanner;
+
+public class Months
+{
+    public static void main(String[] args) 
+    {
+        final int MONTHS = 12;
+        int month;
+        
+        String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Enter the number of a month: ");
+        month = scanner.nextInt();
+        
+        if(month < 1 || month > MONTHS)
+        {   
+            System.out.println("ERROR!");
+        }
+        else
+        {
+            System.out.println("The month is " + months[month - 1]);
+        }
+    }
+}
