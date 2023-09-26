@@ -1,0 +1,38 @@
+package javaapplication133;
+import java.util.Scanner;
+
+public class CodeString
+{
+    public static void main(String[] args) 
+    {
+        final int SIZE = 4;
+        
+        String[] string = new String[SIZE];
+        int[] sum = {0, 0, 0, 0};
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        for(int i = 0; i < SIZE; i++)
+        {
+            System.out.println("Enter a string: ");
+            string[i] = scanner.nextLine();
+            
+            for(int j = 0; j < string[i].length(); i++)
+            {
+                if(string[i].charAt(j) == 'a' || string[i].charAt(j) == 'e' || string[i].charAt(j) == 'i' || string[i].charAt(j) == 'o' || string[i].charAt(j) == 'u' || string[i].charAt(j) == 'y')
+                {
+                    sum[i]+= string[i].charAt(j) * string[i].length();
+                }
+                else
+                {
+                    sum[i] += string[i].charAt(j) / string[i].length();
+                }
+            }
+        }
+        
+        for(int i = 1; i <= SIZE; i++)
+        {
+            System.out.println("Code for string " + i + " is " + sum[i]);
+        }
+    }
+}
