@@ -1,0 +1,28 @@
+package javaapplication133;
+import java.util.Scanner;
+
+public class JavaApplication133 
+{
+    public static void main(String[] args) 
+    {
+        final int MONTHS = 12;
+        String month;
+        
+        String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+        int[] number_days = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Enter the name of a month: ");
+        month = scanner.nextLine();
+        
+        for(int i = 0; i < MONTHS; i ++)
+        {
+            if(month.equals(months[i]))
+            {
+                System.out.println("This month has " + number_days[i] + " days");
+                break;
+            }
+        }
+    }
+}
