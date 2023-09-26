@@ -1,0 +1,42 @@
+package javaapplication133;
+import java.util.Scanner;
+
+public class JavaApplication133 
+{
+    public static void main(String[] args) 
+    {
+        final int SIZE = 4;
+        
+        int[] array = new int [SIZE];
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        for(int i = 0; i < SIZE; i++)
+        {
+            System.out.println("Enter a number: ");
+            array[i] = scanner.nextInt();
+        }
+        
+        int min = 0;
+        int max = 0;
+        
+        for(int i = 0; i < SIZE; i++)
+        {
+            if(i == 0)
+            {
+                min = array[i];
+                max = array[i];
+            }
+            else if(array[i] < min)
+            {
+                min = array[i];
+            }
+            else if(array[i] > max)
+            {
+                max = array[i];
+            }
+        }
+        System.out.println("Smallest number is " + min);
+        System.out.println("Highest number is " + max);
+    }
+}
