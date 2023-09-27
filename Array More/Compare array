@@ -1,0 +1,46 @@
+package javaapplication148;
+import java.util.Scanner;
+
+
+public class CompareArray
+{
+    public static void main(String[] args) 
+    {
+        final int SIZE = 4;
+        
+        int [] array = new int [SIZE];
+        int [] array2 = new int [SIZE];
+        int counter = 0;
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        for(int i = 0; i < SIZE; i++)
+        {
+            System.out.println("Enter number for 1st array: ");
+            array[i] = scanner.nextInt();
+        }
+        
+        for(int i = 0; i < SIZE; i++)
+        {
+            System.out.println("Enter number for 2nd array: ");
+            array2[i] = scanner.nextInt();
+        }
+        
+        for(int i = 0; i < SIZE; i++)
+        {
+            if(array[i] == array2[i])
+            {
+                counter++;
+            }
+            else
+            {
+                System.out.println("Arrays are not the same!");
+                break;
+            }
+        }
+        if(counter == SIZE)
+        {
+            System.out.println("Arrays are the same!");
+        }
+    }
+}
