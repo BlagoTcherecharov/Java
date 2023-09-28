@@ -1,0 +1,45 @@
+package com.mycompany.java;
+import java.util.Scanner;
+
+public class Java 
+{
+    public static void main(String[] args) 
+    {
+        final int SIZE = 8;
+        
+        int[] array = new int [SIZE];
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        for (int i = 0; i < SIZE; i++) 
+        {
+            System.out.println("Enter a number: ");
+            array[i] = scanner.nextInt();
+        }
+        
+        int max_counter = 0;
+        int frequent_num = 0;
+        int counter = 0;
+
+        for (int i = 0; i < SIZE; i++) 
+        {
+            for (int j = i; j < SIZE; j++) 
+            {
+                if (array[j] == array[i]) 
+                {
+                    counter++;
+                }
+            }
+
+            if (counter > max_counter) 
+            {
+                max_counter = counter;
+                frequent_num = array[i];
+            }
+            
+            counter = 0;
+        }
+
+        System.out.println("Most frequently number is " + frequent_num + ", " + max_counter + " times.");
+    }
+}
