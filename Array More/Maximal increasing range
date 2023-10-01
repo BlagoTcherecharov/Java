@@ -1,0 +1,45 @@
+package com.mycompany.java;
+import java.util.Scanner;
+
+public class MaxIncrease 
+{
+    public static void main(String[] args) 
+    {
+        final int SIZE = 10;
+        int[] arr = new int[SIZE];
+        
+        int counter_max = 0;
+        int counter = 1;
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        for (int i = 0; i < SIZE; i++) 
+        {
+            System.out.println("Enter number: ");
+            arr[i] = scanner.nextInt();
+        }
+
+        for (int i = 1; i < SIZE; i++) 
+        {
+            if (arr[i] > arr[i - 1]) 
+            {
+                counter++;
+            } 
+            else 
+            {
+                if (counter > counter_max) 
+                {
+                    counter_max = counter;
+                }
+                counter = 1;
+            }
+        }
+
+        if (counter > counter_max) 
+        {
+            counter_max = counter;
+        }
+        
+        System.out.print("Maximal increasing range of numbers is " + counter_max);
+    }
+}
