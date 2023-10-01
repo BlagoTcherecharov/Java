@@ -1,0 +1,48 @@
+package com.mycompany.java;
+import java.util.Scanner;
+
+public class FirstWord
+{
+    public static void main(String[] args) 
+    {
+        String word1, word2;
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Enter 1st word: ");
+        word1 = scanner.nextLine();
+        System.out.println("Enter 2nd word: ");
+        word2 = scanner.nextLine();
+        
+        
+        
+        char[] arr1 = word1.toCharArray();
+        char[] arr2 = word2.toCharArray();
+        
+        int i = 0;
+        int result = 0;
+        
+        while(i < arr1.length || i < arr2.length)
+        {
+            if (arr1[i] != arr2[i]) 
+            {
+                result = arr1[i] - arr2[i];
+                break;
+            }
+            i++;
+        }
+
+        if (result == 0) 
+        {
+            System.out.println("The words are the same");
+        } 
+        else if (result > 0) 
+        {
+            System.out.println("The word " + String.valueOf(arr2) + " is the first word that's gonna be seen in the dictionary");
+        } 
+        else 
+        {
+            System.out.println("The word " + String.valueOf(arr1) + " is the first word that's gonna be seen in the dictionary");
+        }
+    }
+}
