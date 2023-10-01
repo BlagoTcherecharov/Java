@@ -1,4 +1,4 @@
-package javaapplication133;
+package com.mycompany.java;
 import java.util.Scanner;
 
 public class CodeString
@@ -8,31 +8,35 @@ public class CodeString
         final int SIZE = 4;
         
         String[] string = new String[SIZE];
-        int[] sum = {0, 0, 0, 0};
+        int[] sum = new int[SIZE];
         
         Scanner scanner = new Scanner(System.in);
+        
         
         for(int i = 0; i < SIZE; i++)
         {
             System.out.println("Enter a string: ");
             string[i] = scanner.nextLine();
             
-            for(int j = 0; j < string[i].length(); i++)
+            char[] arr1 = string[i].toCharArray();
+            sum[i] = 0;
+            
+            for(int j = 0; j < arr1.length; j++)
             {
-                if(string[i].charAt(j) == 'a' || string[i].charAt(j) == 'e' || string[i].charAt(j) == 'i' || string[i].charAt(j) == 'o' || string[i].charAt(j) == 'u' || string[i].charAt(j) == 'y')
+                if(arr1[j] == 'a' || arr1[j] == 'e' || arr1[j] == 'i' || arr1[j] == 'o' || arr1[j] == 'u' || arr1[j] == 'y')
                 {
-                    sum[i]+= string[i].charAt(j) * string[i].length();
+                    sum[i]+= arr1[j] * arr1.length;
                 }
                 else
                 {
-                    sum[i] += string[i].charAt(j) / string[i].length();
+                    sum[i] += arr1[j] / arr1.length;
                 }
             }
         }
         
         for(int i = 1; i <= SIZE; i++)
         {
-            System.out.println("Code for string " + i + " is " + sum[i]);
+            System.out.println("Code for string " + i + " is " + sum[i-1]);
         }
     }
 }
