@@ -1,0 +1,47 @@
+package com.mycompany.java;
+import java.util.Scanner;
+
+public class Java 
+{
+    public static void main(String[] args) 
+    {
+        final int SIZE = 6;
+        int[] arr = new int[SIZE];
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        for (int i = 0; i < SIZE; i++) 
+        {
+            System.out.println("Enter number: ");
+            arr[i] = scanner.nextInt();
+        }
+
+        System.out.println("Enter sum: ");
+        int sum = scanner.nextInt();
+
+        int currentSum;
+        
+        for (int i = 0; i < SIZE; i++) 
+        {
+            currentSum = arr[i];
+            for (int j = i + 1; j <= SIZE; j++) 
+            {
+                if (currentSum == sum) 
+                {
+                    for (int k = i; k < j; k++) 
+                    {
+                        System.out.print(arr[k] + " ");
+                    }
+                    return;
+                }
+                if (currentSum > sum || j == SIZE) 
+                {
+                    break;
+                }
+                currentSum += arr[j];
+            }
+        }
+
+        System.out.println("No answer!");
+    }
+}
