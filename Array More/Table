@@ -1,0 +1,91 @@
+package com.mycompany.java;
+import java.util.Scanner;
+import javax.swing.*;
+
+public class Java
+{
+    static void UpToDown(int size)
+    {
+        JFrame frame = new JFrame ();
+        Object[][] data = new Object[size][size];
+        
+        int counter = 1;
+        
+        for(int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++) 
+            {
+                data[j][i] = counter++;
+            }
+        }
+        
+        String[] columnNames = {"Column 1", "Column 2", "Column 3", "Column 4"};
+        JTable table = new JTable(data, columnNames);
+        
+        frame.add (table);
+        frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+        frame.setSize (400,400);
+        frame.setLocationRelativeTo (null); 
+        frame.setVisible (true);
+    }
+    
+    static void Snake(int size)
+    {
+        JFrame frame = new JFrame ();
+        Object[][] data = new Object[size][size];
+        
+        int counter = 1;
+        
+        for (int i = 0; i < size; i++) 
+        {
+            if (i % 2 == 0) 
+            {
+                for (int j = 0; j < size; j++) 
+                {
+                    data[j][i] = counter++;
+                }
+            } 
+            else 
+            {
+                for (int j = size - 1; j >= 0; j--) 
+                {
+                    data[j][i] = counter++;
+                }
+            }
+        }
+        
+        String[] columnNames = {"Column 1", "Column 2", "Column 3", "Column 4"};
+        JTable table = new JTable(data, columnNames);
+        
+        frame.add (table);
+        frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+        frame.setSize (400,400);
+        frame.setLocationRelativeTo (null); 
+        frame.setVisible (true);
+    }
+    
+    static void Diagonal(int size)
+    {
+        
+    }
+    
+    static void Spiral(int size)
+    {
+        
+    }
+    
+    public static void main(String[] args) 
+    {
+        int size;
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Enter size of table: ");
+        size = scanner.nextInt();
+        
+        UpToDown(size);
+        Snake(size);
+        //Diagonal(size);
+        //Spiral(size);
+    }
+}
