@@ -1,0 +1,15 @@
+package javaapplication148;
+import java.util.*;
+
+public class LetterInWord
+{
+    public static void main(String[] args) 
+    {
+        String word;
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Enter a word: ");
+        word = scanner.nextLine();
+    }
+}
