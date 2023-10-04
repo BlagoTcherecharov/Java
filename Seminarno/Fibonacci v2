@@ -1,0 +1,47 @@
+package com.mycompany.java;
+import java.util.Scanner;
+
+public class Fibonacci
+{
+    public static void main(String[] args) 
+    {
+        int num;
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Enter a number: ");
+        num = scanner.nextInt();
+        
+        ForLoop(num);
+        Binet(num);
+    }
+    
+    private static void ForLoop(int num)
+    {
+        int previous2 = 0;
+        int previous1 = 1;
+        int result = 0;
+
+        for (int i = 2; i <= num; i++) 
+        {
+            result = previous2 + previous1;
+            previous2 = previous1;
+            previous1 = result;
+        }
+        if(num < 1)
+            System.out.println("Result is " + 0);
+        else if(num <= 2)
+            System.out.println("Result is " + 1);
+        else
+            System.out.println("Result is " + result);
+    }
+    
+    private static void Binet(int num)
+    {
+        double sqrt5 = Math.sqrt(5);
+        double phi1 = (1 + sqrt5) / 2;
+        double phi2 = (1 - sqrt5) / 2;
+        double fibN = (Math.pow(phi1, num) - Math.pow(phi2, num)) / sqrt5;
+        System.out.println("Result is " + Math.round(fibN));
+    }
+}
