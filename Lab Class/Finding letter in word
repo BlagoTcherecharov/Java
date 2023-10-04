@@ -1,15 +1,31 @@
-package javaapplication148;
-import java.util.*;
+package com.mycompany.java;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class LetterInWord
 {
     public static void main(String[] args) 
     {
-        String word;
+        String word, letter;
         
         Scanner scanner = new Scanner(System.in);
         
         System.out.println("Enter a word: ");
         word = scanner.nextLine();
+        
+        System.out.println("Enter the letter you want to search in the word: ");
+        letter = scanner.nextLine();
+        
+        Pattern pattern = Pattern.compile(letter, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(word);
+        boolean matchFound = matcher.find();
+        if(matchFound) 
+        {
+          System.out.println("Letter has been found in the word!");
+        } else 
+        {
+          System.out.println("Letter has not been found in the word!");
+        }
     }
 }
