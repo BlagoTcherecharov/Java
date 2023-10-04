@@ -1,0 +1,28 @@
+package com.mycompany.java;
+import java.util.Scanner;
+
+public class Fibonacci
+{
+    public static void main(String[] args) 
+    {
+        int num;
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Enter a number: ");
+        num = scanner.nextInt();
+        
+        long result = Fibonacci(num);
+        
+        System.out.println("Result is " + result);
+    }
+    
+    private static long Fibonacci(int num)
+    {
+        if(num < 1)
+            return 0;
+        if(num <= 2)
+            return 1;
+        return Fibonacci(num - 1) + Fibonacci(num - 2);
+    }
+}
