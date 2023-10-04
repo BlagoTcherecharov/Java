@@ -1,0 +1,37 @@
+package com.mycompany.java;
+//import java.util.Scanner;
+
+public class Java
+{
+    public static void main(String[] args) 
+    {
+        int arr[][] = {{1, 2},{4, 5, 6},{12, 8, 1, 8},{0, 12, 3, 5, 8},{3}};
+
+        int N = arr.length;
+        int M = 0;
+        
+        for (int i = 0; i < N; i++) 
+        {
+            int[] subarray = arr[i];
+            int NS = subarray.length;
+            M += NS;
+        }
+        
+        int meanIndex = M / N;
+        
+        int sum = 0;
+        
+        for (int i = 0; i < N; i++) 
+        {
+            int[] subarray = arr[i];
+            int NS = subarray.length;
+            if(NS > meanIndex)
+            {
+                sum += subarray[meanIndex];
+            }
+        }
+        
+        System.out.println("Mean = " + meanIndex);
+        System.out.println("Sum = " + sum);
+    }
+}
