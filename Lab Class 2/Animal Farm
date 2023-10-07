@@ -1,0 +1,202 @@
+package com.mycompany.java;
+import java.util.Scanner;
+
+public class AnimalFarm
+{
+    public static void main(String[] args) 
+    {
+        int num_animal;
+        
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter number of animals: ");
+        num_animal = scanner.nextInt();
+
+        Pet[] pets = new Pet[num_animal];
+
+        for(int i = 0; i < num_animal; i++)
+        {
+            int pet, weight;
+            String id, sound;
+
+            System.out.println("Enter the type of pet you want to add to your farm: ");
+            System.out.println("1. Pig ");
+            System.out.println("2. Cow ");
+            System.out.println("3. Sheep ");
+            System.out.println("4. Goat ");
+            System.out.println("5. Dog ");
+            System.out.println("6. Cat ");
+            pet = scanner.nextInt();
+
+            System.out.println("Enter the weight of the animal: ");
+            weight = scanner.nextInt();scanner.nextLine();
+            System.out.println("Enter the id of the animal: ");
+            id = scanner.nextLine();
+            System.out.println("Enter the sound of the animal: ");
+            sound = scanner.nextLine();
+
+
+            switch(pet)
+            {
+                case 1 -> {
+                    pets[i] = new Pig(weight, id, sound);
+                }
+                case 2 -> {
+                    pets[i] = new Cow(weight, id, sound);
+                }
+                case 3 -> {
+                    pets[i] = new Sheep(weight, id, sound);
+                }
+                case 4 -> {
+                    pets[i] = new Goat(weight, id, sound);
+                }
+                case 5 -> {
+                    pets[i] = new Dog(weight, id, sound);
+                }
+                case 6 -> {
+                    pets[i] = new Cat(weight, id, sound);
+                }
+                default -> System.out.println("Invalid input");
+            }
+        }
+        
+        for (int i = 0; i < num_animal; i++) 
+        {
+            pets[i].sound();
+            pets[i].information();
+        }
+    }
+    
+    static abstract class Pet
+    {
+        int weight;
+        String id;
+        String sound;
+        
+        public Pet(int weight, String id, String sound)
+        {
+            this.weight = weight;
+            this.id = id;
+            this.sound = sound;
+        }
+        
+        abstract void sound();
+        abstract void information();
+    }
+    
+    static class Pig extends Pet
+    {
+        public Pig(int weight, String id, String sound)
+        {
+            super(weight, id, sound);
+        }
+        
+        @Override void sound()
+        {
+            System.out.println("Pig's sound " + sound);
+        }
+        
+        @Override void information()
+        {
+            String info = String.format("The pig's id is %s and weights %d kg and makes the sound %s.", id, weight, sound);
+            System.out.println(info);
+        }
+    }
+    
+    static class Cow extends Pet
+    {
+        public Cow(int weight, String id, String sound)
+        {
+            super(weight, id, sound);
+        }
+        
+        @Override void sound()
+        {
+            System.out.println("Cow's sound " + sound);
+        }
+        
+        @Override void information()
+        {
+            String info = String.format("The cow's id is %s and weights %d kg and makes the sound %s.", id, weight, sound);
+            System.out.println(info);
+        }
+    }
+    
+    static class Sheep extends Pet
+    {
+        public Sheep(int weight, String id, String sound)
+        {
+            super(weight, id, sound);
+        }
+        
+        @Override void sound()
+        {
+            System.out.println("Sheep's sound " + sound);
+        }
+        
+        @Override void information()
+        {
+            String info = String.format("The sheep's id is %s and weights %d kg and makes the sound %s.", id, weight, sound);
+            System.out.println(info);
+        }
+    }
+    
+    static class Goat extends Pet
+    {
+        public Goat(int weight, String id, String sound)
+        {
+            super(weight, id, sound);
+        }
+        
+        @Override void sound()
+        {
+            System.out.println("Goat's sound " + sound);
+        }
+        
+        @Override void information()
+        {
+            String info = String.format("The goat's id is %s and weights %d kg and makes the sound %s.", id, weight, sound);
+            System.out.println(info);
+        }
+    }
+    
+    static class Dog extends Pet
+    {
+        public Dog(int weight, String id, String sound)
+        {
+            super(weight, id, sound);
+        }
+        
+        @Override void sound()
+        {
+            System.out.println("Dog's sound " + sound);
+        }
+        
+        @Override void information()
+        {
+            String info = String.format("The dog's id is %s and weights %d kg and makes the sound %s.", id, weight, sound);
+            System.out.println(info);
+        }
+    }
+    
+    static class Cat extends Pet
+    {
+        public Cat(int weight, String id, String sound)
+        {
+            super(weight, id, sound);
+        }
+        
+        @Override void sound()
+        {
+            System.out.println("Cat's sound " + sound);
+        }
+        
+        @Override void information()
+        {
+            String info = String.format("The cat's id is %s and weights %d kg and makes the sound %s.", id, weight, sound);
+            System.out.println(info);
+        }
+    }
+}
+
+
