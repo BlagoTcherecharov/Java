@@ -1,0 +1,237 @@
+package javaapplication133;
+import java.util.*;
+import java.io.*;
+
+
+
+public class JavaApplication133
+{   
+    public static void main(String[] args) 
+    {
+        int a, b, h;
+        double r, h2;
+        
+        Scanner scanner = new Scanner(System.in);
+                
+        System.out.println("Enter the base of the rectangle: ");
+        b = scanner.nextInt();
+        System.out.println("Enter the height of the rectangle: ");
+        h = scanner.nextInt();
+        
+                
+        Rectangle rectangle = new Rectangle(b, h);
+        rectangle.Perimeter();
+        rectangle.Surface();
+        
+        System.out.println("Enter the number of sides of the polygon: ");
+        a = scanner.nextInt();
+        System.out.println("Enter the size of a side of the polygon: ");
+        b = scanner.nextInt();
+        
+        
+        Polygon polygon = new Polygon(a, b);
+        Point[] point = new Point[a];
+        for (int i = 0; i < a; i++) 
+        {
+            System.out.println("Enter point x for point: ");
+            int x = scanner.nextInt();
+            System.out.println("Enter point y for point: ");
+            int y = scanner.nextInt();
+            
+            point[i] = new Point(x, y);
+        }
+        
+        polygon.Perimeter();
+        polygon.Surface(point);
+        
+        System.out.println("Enter the radius of the circle: ");
+        r = scanner.nextDouble();
+        
+        
+        Circle circle = new Circle(r);
+        circle.Perimeter();
+        circle.Surface();
+        
+        System.out.println("Enter the radius of the cylinder: ");
+        r = scanner.nextDouble();
+        System.out.println("Enter the height of the cylinder: ");
+        h2 = scanner.nextDouble();
+        
+        
+        Cylinder cylinder = new Cylinder(r, h);
+        cylinder.Volume();
+        
+        System.out.println("Enter the small base of the trapezoid: ");
+        a = scanner.nextInt();
+        System.out.println("Enter the big base of the trapezoid: ");
+        b = scanner.nextInt();
+        System.out.println("Enter the height of the trapezoid: ");
+        h = scanner.nextInt();
+        
+        
+        Trapezoid trapezoid = new Trapezoid(a, b, h);
+        trapezoid.Volume();
+        
+        System.out.println("Enter the side of the cube: ");
+        a = scanner.nextInt();
+        
+        Cube cube = new Cube(a);
+        cube.Volume();
+    }
+}
+
+class Figure
+{
+    protected static final int MIN = 0;
+    protected static final int MAX = 2147483647;
+}
+
+class Rectangle extends Figure
+{
+    private int b, h, result;
+    
+    public Rectangle(int b, int h) throws ArithmeticException
+    {
+        if(b <= MIN || h <= MIN)
+        {
+            throw new ArithmeticException("Base and height can't be negative!");
+        }
+        if(b * h > MAX)
+        {
+            throw new ArithmeticException("Value is too large!");
+        }
+        this.b = b;
+        this.h = h;
+    }
+    
+    public void Perimeter()
+    {
+        result = (b + h) * 2;
+        System.out.println("Perimeter of rectangle is " + result);
+    }
+    
+    public void Surface()
+    {
+        result = b * h;
+        System.out.println("Surface of rectangle is " + result);
+    }
+}
+
+class Point
+{
+    protected int x, y;
+    
+    public Point()
+    {
+    
+    }
+    
+    public Point(int x, int y)
+    {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+class Polygon extends Point
+{
+    private int num_sides, side, result;
+    
+    public Polygon(int num_sides, int side) 
+    {
+        this.num_sides = num_sides;
+        this.side = side;
+    }
+    
+    public void Perimeter()
+    {
+        result = num_sides * side;
+        System.out.println("Perimeter of polygon is " + result);
+    }
+    
+    public void Surface(Point[] points)
+    {
+        double sum = 0;
+        int n = points.length;
+        
+        for (int i = 0; i < n - 1; i++) 
+        {
+            sum += (points[i].x  * points[i+1].y - points[i].y * points[i+1].x);
+        }
+        sum = 0.5 * Math.abs(sum);
+        System.out.println("Perimeter of polygon is " + sum);
+    }
+}  
+        
+class Circle
+{
+    private double r, result;
+    
+    public Circle(double r)
+    {
+        this.r = r;
+    }
+    
+    public void Perimeter()
+    {
+        result = 2 * r * Math.PI;
+        System.out.println("Perimeter of circle is " + result);
+    }
+    
+    public void Surface()
+    {
+        result = Math.PI * r * r;
+        System.out.println("Surface of circle is " + result);
+    }
+}
+
+class Cylinder
+{
+    private double r, h, result;
+    
+    public Cylinder(double r, double h)
+    {
+        this.r = r;
+        this.h = h;
+    }
+    
+    public void Volume()
+    {
+        result = 2 * Math.PI * r * (r * h);
+        System.out.println("Volume of cylinder is " + result);
+    }
+}
+
+class Trapezoid
+{
+    private int a, b, h, result;
+    
+    public Trapezoid(int a, int b, int h)
+    {
+        this.a = a;
+        this.b = b;
+        this.h = h;
+    }
+    
+    public void Volume()
+    {
+        result = h * (a + b) / 2;
+        System.out.println("Volume of trapezoid is " + result);
+    }
+}
+
+class Cube
+{
+    private int side, result;
+    
+    public Cube(int side)
+    {
+        this.side = side;
+    }
+    
+    public void Volume()
+    {
+        result = 6 * (side * side);
+        System.out.println("Volume of cube is " + result);
+    }
+}
