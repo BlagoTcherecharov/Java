@@ -1,0 +1,43 @@
+package javaapplication148;
+import java.net.*;
+import java.io.*;
+
+
+public class JavaApplication148 
+{
+    static final int START_PORT = 1;
+    static final int END_PORT = 1024;
+    static final int TIMEOUT = 6500;
+    static final String HOST_NAME = "www.kst.tugab.bg";
+    
+    public static void main(String[] args) 
+    {
+        InetAddress ip;
+        try
+        {
+            ip = InetAddress.getByName(HOST_NAME);
+        }
+        catch(UnknownHostException ex)
+        {
+            System.out.println("Wrong host name!");
+            return;
+        }
+        for(int i = START_PORT; i <= END_PORT; i++)
+        {
+            Socket socket = new Socket();
+            try
+            {
+                socket.connect(new InetSocketAddress(ip, i), TIMEOUT);
+                System.out.println("Port " + i + " is open!");
+            }
+            catch (SocketTimeoutException ste)
+            {
+                System.out.println("Server is not responding! ");
+            }
+            catch (IOException ioe)
+            {
+                System.out.println("Port " + i + " is closed!");
+            }
+        }
+    }
+}
