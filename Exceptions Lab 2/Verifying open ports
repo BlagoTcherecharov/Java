@@ -1,0 +1,58 @@
+package javaapplication148;
+import java.net.*;
+import java.io.*;
+import static javaapplication148.JavaApplication148.TIMEOUT;
+import static javaapplication148.JavaApplication148.ip;
+
+public class JavaApplication148 
+{
+    static final int START_PORT = 1;
+    static final int END_PORT = 1024;
+    static final int TIMEOUT = 2500;
+    static final String HOST_NAME = "www.kst.tugab.bg";
+    
+    static Socket socket;
+    static InetAddress ip;
+    
+    public static void main(String[] args) 
+    {
+        try
+        {
+            ip = InetAddress.getByName(HOST_NAME);
+        }
+        catch(UnknownHostException uhs)
+        {
+            System.out.println("Wrong host name!");
+            return;
+        }
+        
+        System.out.println("Open ports: ");
+        for(int i = START_PORT; i <= END_PORT; i++)
+        {
+            (new ScanThread("" + i)).start();
+        }
+    }
+}
+
+class ScanThread extends Thread
+{
+    public ScanThread(String s)
+    {
+        super(s);
+    }
+    
+    @Override 
+    public void run()    
+    { 
+        Socket socket = new Socket();
+        int port = Integer.parseInt(getName());
+        try
+        {
+            socket.connect(new InetSocketAddress(ip, port), TIMEOUT);
+            System.out.println(port);
+        }
+        catch(IOException ex)
+        {
+        }
+    }
+}
