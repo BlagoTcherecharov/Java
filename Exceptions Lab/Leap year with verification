@@ -1,0 +1,52 @@
+package com.mycompany.java;
+import java.util.*;
+
+
+
+public class Java
+{   
+     public static void main(String[] args) 
+    {
+        int num_years;
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Enter number of years: ");
+        num_years = scanner.nextInt();
+        
+        if(num_years <= 0 )
+        {
+            System.out.println("Number needs to be positive!");
+            return;
+        }
+        
+        int[] array = new int[num_years];
+        boolean [] array2 = new boolean[num_years];
+        
+        for (int i = 0; i < num_years; i++) 
+        {
+            System.out.println("Enter year: ");
+            array[i] = scanner.nextInt();
+            
+            array2[i] = isLeap(array[i]);
+        }
+        
+        for (int i = 0; i < num_years; i++) 
+        {
+            if(array2[i] == false)
+                System.out.println("Year " + array[i] + " is not leap!");
+            else
+                System.out.println("Year " + array[i] + " is leap!");
+        }
+    }
+    
+    private static boolean isLeap(int year)
+    {
+        boolean result = false;
+        
+        if((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0))
+            result = true;
+        
+        return result;
+    }
+}
