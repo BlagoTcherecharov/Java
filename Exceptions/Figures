@@ -1,12 +1,13 @@
-package javaapplication133;
+package com.mycompany.java;
+import static com.mycompany.java.Figure.MAX;
+import static com.mycompany.java.Figure.MIN;
 import java.util.*;
-import java.io.*;
 
 
 
-public class JavaApplication133
+public class Java
 {   
-    public static void main(String[] args) 
+     public static void main(String[] args) throws Exception 
     {
         int a, b, h;
         double r, h2;
@@ -80,26 +81,21 @@ public class JavaApplication133
     }
 }
 
-class Figure
-{
-    protected static final int MIN = 0;
-    protected static final int MAX = 2147483647;
-}
-
-class Rectangle extends Figure
+class Rectangle 
 {
     private int b, h, result;
     
     public Rectangle(int b, int h) throws ArithmeticException
     {
-        if(b <= MIN || h <= MIN)
+        if(b <= Integer.MIN_VALUE || h <= Integer.MIN_VALUE)
         {
             throw new ArithmeticException("Base and height can't be negative!");
         }
-        if(b * h > MAX)
+        if(b * h > Integer.MAX_VALUE || (b + h) * 2 > Integer.MAX_VALUE)
         {
             throw new ArithmeticException("Value is too large!");
         }
+        
         this.b = b;
         this.h = h;
     }
@@ -128,6 +124,11 @@ class Point
     
     public Point(int x, int y)
     {
+        if(x * y > Integer.MAX_VALUE)
+        {
+            throw new ArithmeticException("Value is too large!");
+        }
+        
         this.x = x;
         this.y = y;
     }
@@ -139,6 +140,14 @@ class Polygon extends Point
     
     public Polygon(int num_sides, int side) 
     {
+        if(num_sides <= Integer.MIN_VALUE || side <= Integer.MIN_VALUE)
+        {
+            throw new ArithmeticException("Number of sides and sides can't be negative!");
+        }
+        if(num_sides * side > Integer.MAX_VALUE)
+        {
+            throw new ArithmeticException("Value is too large!");
+        }
         this.num_sides = num_sides;
         this.side = side;
     }
@@ -169,6 +178,14 @@ class Circle
     
     public Circle(double r)
     {
+        if(r <= Integer.MIN_VALUE)
+        {
+            throw new ArithmeticException("Radius can't be negative!");
+        }
+        if(2 * r * Math.PI > Integer.MAX_VALUE || Math.PI * r * r > Integer.MAX_VALUE)
+        {
+            throw new ArithmeticException("Value is too large!");
+        }
         this.r = r;
     }
     
@@ -191,6 +208,14 @@ class Cylinder
     
     public Cylinder(double r, double h)
     {
+        if(r <= Integer.MIN_VALUE || h <= Integer.MIN_VALUE)
+        {
+            throw new ArithmeticException("Radius and height can't be negative!");
+        }
+        if(2 * Math.PI * r * (r * h) > Integer.MAX_VALUE)
+        {
+            throw new ArithmeticException("Value is too large!");
+        }
         this.r = r;
         this.h = h;
     }
@@ -208,6 +233,15 @@ class Trapezoid
     
     public Trapezoid(int a, int b, int h)
     {
+        if(a <= Integer.MIN_VALUE || b <= Integer.MIN_VALUE || h <= Integer.MIN_VALUE)
+        {
+            throw new ArithmeticException("Small base, big base and height can't be negative!");
+        }
+        if(h * (a + b) / 2 > Integer.MAX_VALUE)
+        {
+            throw new ArithmeticException("Value is too large!");
+        }
+        
         this.a = a;
         this.b = b;
         this.h = h;
@@ -226,6 +260,14 @@ class Cube
     
     public Cube(int side)
     {
+        if(side <= Integer.MIN_VALUE)
+        {
+            throw new ArithmeticException("Side can't be negative!");
+        }
+        if(6 * (side * side) > Integer.MAX_VALUE)
+        {
+            throw new ArithmeticException("Value is too large!");
+        }
         this.side = side;
     }
     
