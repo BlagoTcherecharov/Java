@@ -1,0 +1,71 @@
+package com.mycompany.java;
+import java.util.*;
+
+
+
+public class Java
+{   
+     public static void main(String[] args) throws Exception 
+    {
+        String first_name, last_name, faculty_number, semester;
+        int year;
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter first name: ");
+        first_name = scanner.nextLine();
+        System.out.print("Enter last name: ");
+        last_name = scanner.nextLine();
+        System.out.print("Enter faculty number: ");
+        faculty_number = scanner.nextLine();
+        System.out.print("Enter semester (winter or summer): ");
+        semester = scanner.nextLine();
+        System.out.print("Enter year of study: ");
+        year = scanner.nextInt();
+     
+        Student student = new Student(first_name, last_name, faculty_number, semester, year);
+        
+        student.Output();
+    }
+}
+
+class Student 
+{
+    private String first_name, last_name, faculty_number, semester;
+    private int year;
+
+    public Student(String first_name, String last_name, String faculty_number, String semester, int year) throws Exception 
+    {
+        if (first_name == null || first_name.isEmpty()) 
+        {
+            throw new Exception("First name can't be empty!");
+        }
+        if (last_name == null || last_name.isEmpty()) 
+        {
+            throw new Exception("Last name can't be empty!");
+        }
+        if (faculty_number == null || first_name.isEmpty()) 
+        {
+            throw new Exception("Faculty number cant't be empty!");
+        }
+        if (year <= 0 && year > 4) 
+        {
+            throw new Exception("School year must be between 1 and 4!");
+        }
+        if (!semester.equals("winter") && !semester.equals("summer")) 
+        {
+            throw new Exception("Semester must be either winter or summer!");
+        }
+
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.faculty_number = faculty_number;
+        this.year = year;
+        this.semester = semester;
+    }
+    
+    public void Output()
+    {
+        System.out.println("Student " + first_name + " " + last_name + " with faculty number " + faculty_number + " is in year " + year + " of the " + semester + " semester.");
+    }
+}
