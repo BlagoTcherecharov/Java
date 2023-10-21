@@ -9,15 +9,13 @@
     <span id="time"></span>
 
     <script>
-      // Create a new web worker
+      //If chrome didn't have security, should be working
       const worker = new Worker("worker.js");
 
-      // Message event listener to receive data from the worker
       worker.addEventListener('message', function(event) {
         document.querySelector('#time').textContent = event.data;
       });
 
-      // Start the worker
       worker.postMessage('start');
     </script>
   </body>
