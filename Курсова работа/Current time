@@ -1,20 +1,21 @@
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Display current date and time</title>
+    <title>Display current time using Web Worker</title>
   </head>
   <body>
-    <h1>Current date and time:</h1>
-    <span id="datetime"></span>
+    <h4>Current time:</h4>
+    <span id="time"></span>
 
     <script>
       //Using worker as Data URL, error when trying to open worker when debugging on chrome due to security (can't accept file paths)
       //Error: Uncaught SecurityError: Failed to create a worker: script at 'worker.js' cannot be accessed from origin 'null'.
-      const worker = new Worker("data:application/x-javascript;base64,CmZ1bmN0aW9uIHVwZGF0ZURhdGVUaW1lKCkgewogICAgY29uc3Qgbm93ID0gbmV3IERhdGUoKTsKICAKICAgIGNvbnN0IGN1cnJlbnREYXRlVGltZSA9IG5vdy50b0xvY2FsZVN0cmluZygpOwogIAogICAgc2VsZi5wb3N0TWVzc2FnZShjdXJyZW50RGF0ZVRpbWUpOwogIH0KICAKICBzZXRJbnRlcnZhbCh1cGRhdGVEYXRlVGltZSwgMTAwMCk7");
+      const worker = new Worker("data:application/x-javascript;base64,ZnVuY3Rpb24gdXBkYXRlQ2xvY2soKSB7CiAgY29uc3Qgbm93ID0gbmV3IERhdGUoKTsKICBjb25zdCBob3VycyA9IG5vdy5nZXRIb3VycygpLnRvU3RyaW5nKCkucGFkU3RhcnQoMiwgJzAnKTsKICBjb25zdCBtaW51dGVzID0gbm93LmdldE1pbnV0ZXMoKS50b1N0cmluZygpLnBhZFN0YXJ0KDIsICcwJyk7CiAgY29uc3Qgc2Vjb25kcyA9IG5vdy5nZXRTZWNvbmRzKCkudG9TdHJpbmcoKS5wYWRTdGFydCgyLCAnMCcpOwogIGNvbnN0IHRpbWVTdHJpbmcgPSBgJHtob3Vyc306JHttaW51dGVzfToke3NlY29uZHN9YDsKCiAgc2VsZi5wb3N0TWVzc2FnZSh0aW1lU3RyaW5nKTsKfQoKc2V0SW50ZXJ2YWwodXBkYXRlQ2xvY2ssIDEwMDApOwo=");
 
-      worker.addEventListener('message', event => {
-        document.querySelector('#datetime').textContent = event.data;
+      worker.addEventListener('message', function(event) {
+        document.querySelector('#time').textContent = event.data;
       });
 
       worker.postMessage('start');
