@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Display current time using Web Worker</title>
+  </head>
+  <body>
+    <h4>Current time:</h4>
+    <span id="time"></span>
+
+    <script>
+      // Create a new web worker
+      const worker = new Worker("worker.js");
+
+      // Message event listener to receive data from the worker
+      worker.addEventListener('message', function(event) {
+        document.querySelector('#time').textContent = event.data;
+      });
+
+      // Start the worker
+      worker.postMessage('start');
+    </script>
+  </body>
+</html>
