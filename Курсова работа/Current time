@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Display current date and time</title>
+  </head>
+  <body>
+    <h1>Current date and time:</h1>
+    <span id="datetime"></span>
+
+    <script>
+      //Using worker as Data URL, error when trying to open worker when debugging on chrome due to security
+      //Error: Uncaught SecurityError: Failed to create a worker: script at 'worker.js' cannot be accessed from origin 'null'.
+      const worker = new Worker("data:application/x-javascript;base64,CmZ1bmN0aW9uIHVwZGF0ZURhdGVUaW1lKCkgewogICAgY29uc3Qgbm93ID0gbmV3IERhdGUoKTsKICAKICAgIGNvbnN0IGN1cnJlbnREYXRlVGltZSA9IG5vdy50b0xvY2FsZVN0cmluZygpOwogIAogICAgc2VsZi5wb3N0TWVzc2FnZShjdXJyZW50RGF0ZVRpbWUpOwogIH0KICAKICBzZXRJbnRlcnZhbCh1cGRhdGVEYXRlVGltZSwgMTAwMCk7");
+
+      worker.addEventListener('message', event => {
+        document.querySelector('#datetime').textContent = event.data;
+      });
+
+      worker.postMessage('start');
+    </script>
+  </body>
+</html>
