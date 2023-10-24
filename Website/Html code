@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <table>
+        <div class ="background"></div>
+        <table class = "center">
             <tr>
               <th>Attractions</th>
               <th>Images</th>
@@ -33,6 +34,6 @@
         <p><b>Venice</b> is a city in <i>northeastern Italy</i> and the capital of the <b>Veneto</b> region. It is built on a group of <span style="color:blue">118 small islands</span> that are separated by expanses of open water and by canals; portions of the city are linked by <span style="color:blue">over 400 bridges</span>. Together with the cities of <b>Padua</b> and <b>Treviso</b>, <b>Venice</b> is included in the <i>Padua-Treviso-Venice Metropolitan Area</i>, which is considered a statistical metropolitan area, with a <span style="color:blue">total population of 2.6 million</span>.</p>
     </body>
     <footer>
-        <p style:default>Благовест Черешаров</p>
+        <p class = "center_bottom">Благовест Черешаров</p>
     </footer>
 </html>
