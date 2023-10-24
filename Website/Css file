@@ -1,0 +1,13 @@
+th, td {
+  text-align: center;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+p{
+    font-family: Arial;
+    font-size: 30px;
+    text-align: justify;
+}
