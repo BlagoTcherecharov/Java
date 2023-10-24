@@ -1,5 +1,23 @@
+.background {
+    background-image: url("https://static.independent.co.uk/2021/12/14/13/iStock-491391396.jpg");
+    background-size: auto auto;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    width:100%;
+    height:100%; 
+    position:fixed;
+    top:0;
+}
+
+html, body {
+    margin:0;
+    height:100%;
+}
+
 th, td {
   text-align: center;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
 table, th, td {
@@ -10,4 +28,16 @@ p{
     font-family: Arial;
     font-size: 30px;
     text-align: justify;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center_bottom{
+    position: fixed;     
+    text-align: center;    
+    bottom: 0px; 
+    width: 100%;
 }
