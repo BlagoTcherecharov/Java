@@ -1,0 +1,38 @@
+body{
+    font-family: Arial;
+    color: black;
+}
+
+img{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info-box{
+    color:rgba(0, 15, 57, 0.8);
+    padding: auto;
+    text-align: center;
+    background-color: rgba(183, 233, 255, 0.8);
+}
+
+.info-picture{
+    border-radius: 100%;
+    display: block;
+}
+
+.info-text{
+    font-size: 30px;
+}
+
+head, h1, footer{
+    text-align: center;
+    font-family: "Times New Roman";
+    color:white;
+    padding: auto;
+    background-color: rgba(183, 233, 255, 0.8);
+    margin: 100px;
+}
+
+*{
+    background-color: rgba(183, 233, 255, 0.8);
+}
