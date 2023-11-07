@@ -1,0 +1,81 @@
+package com.mycompany.java;
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+public class Java 
+{
+    private Socket socket = null;
+    private ServerSocket server = null;
+    private DataInputStream in =  null;
+ 
+    public Java(int port)
+    {
+        try
+        {
+            server = new ServerSocket(port);
+            System.out.println("Server started");
+ 
+            System.out.println("Waiting for a client ...");
+ 
+            socket = server.accept();
+            System.out.println("Client accepted");
+ 
+        }
+        catch(IOException i)
+        {
+            System.out.println(i);
+        }
+    }
+    
+    public void run() throws IOException
+    {
+        int turn;
+        int guess;
+        int secret_number;
+        Player p1 = new Player();
+        Player p2 = new Player();
+        
+        turn = 0;
+        
+        Random randomNum = new Random();
+        secret_number = randomNum.nextInt(100);
+        
+        while(true)
+        {
+            System.out.println("Enter number: ");
+            if(turn == 0)
+            {
+                guess = p1.Input();
+            }
+            else
+            {
+                guess = p2.Input();
+            }
+            
+            if(guess == secret_number)
+            {
+                System.out.println("Player " + turn+1 + " has guessed the number!");
+                break;
+            }
+            else if(guess > secret_number)
+            {
+                System.out.println("Secret number is lower than " + guess);
+            }
+            else
+            {
+                System.out.println("Secret number is higher than " + guess);
+            }
+        }
+        
+        System.out.println("Closing connection");
+ 
+        socket.close();
+    }
+    
+    public static void main(String[] args) throws IOException 
+    {
+        Java client = new Java(5008);
+        client.run();
+    }
+}
