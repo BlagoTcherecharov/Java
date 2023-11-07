@@ -1,0 +1,58 @@
+package com.mycompany.java;
+import java.io.*;
+import java.util.*;
+import java.nio.charset.*;
+import javax.swing.*;
+
+/*
+public class Player 
+{
+    private ClientSideConnection csc;
+    
+    public void connectionToServer()
+    {
+        csc = new ClientSideConnection();
+    }
+    
+    private class ClientSideConnection
+    {
+        private Socket socket;
+        private DataInputStream dataIn;
+        private DataOutput dataOut;
+
+        public ClientSideConnection()
+        {
+            try
+            {
+                socket = new Socket("localhost", 8080);
+                dataIn = new DataInputStream(socket.getInputStream());
+                dataOut = new DataOutputStream(socket.getOutputStream());
+            }
+            catch (IOException ex)
+            {
+                System.out.println("Error in Client Side Connection!");
+            }
+        }
+    }
+}
+*/
+
+public class Player extends JFrame
+{
+    private OutputStream out = new ByteArrayOutputStream(1024); ;
+    private InputStream in;
+    private int number;
+    private Scanner scanner = new Scanner(System.in);
+    
+    public int Input() throws IOException
+    {
+        //String string = "Enter a number between 0 and 100: ";
+        
+        JTextArea message = new JTextArea();
+        
+        message.setText("Enter a number between 0 and 100: ");
+        number = scanner.nextInt();
+        
+        return number;
+    }
+}
