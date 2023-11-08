@@ -55,7 +55,7 @@ class ServerSideConnection implements Runnable
 {
     private Socket socket;
     private DataInputStream dataIn;
-    private DataOutput dataOut;
+    private DataOutputStream dataOut;
     private int playerId;
 
     public ServerSideConnection(Socket s, int id)
