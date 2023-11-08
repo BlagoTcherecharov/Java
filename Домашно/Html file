@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="newcss.css" type="text/css"/>
+        <title>Guess the number game</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="split left">
+            <div class="centered">
+                <form>
+                    <label>Enter a number between 0 and 100</label><br>
+                    <input type="text" class = "textbox"><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <div class="split right">
+            <div class="centered">
+                <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar"/>
+                <p>Other player is waiting his turn!</p>
+                <!--<p>Wait for other player to pick a number!</p>-->
+            </div>
+        </div>
+    </body>
+</html>
