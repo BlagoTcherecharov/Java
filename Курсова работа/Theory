@@ -1,0 +1,7 @@
+"A web worker is a JavaScript that runs in the background, independently of other scripts, without affecting the performance of the page. You can continue to do whatever you want: clicking, selecting things, etc., while the web worker runs in the background."
+"Web Workers are a simple means for web content to run scripts in background threads."
+"You can run whatever code you like inside the worker thread, with some exceptions. For example, you can't directly manipulate the DOM from inside a worker, or use some default methods and properties of the window object."
+
+Source:
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
+https://www.w3schools.com/html/html5_webworkers.asp
