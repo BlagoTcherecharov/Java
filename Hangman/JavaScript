@@ -1,0 +1,9 @@
+var difficulty;
+
+function difficulty_selection(){
+    difficulty = 
+}
+
+function letter_submit(){
+    alert("Button clicked");
+}
