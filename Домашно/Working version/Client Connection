@@ -1,0 +1,43 @@
+import java.net.*;
+import java.io.*;
+import java.util.*;
+
+public class Client 
+{
+    public static void main(String[] args) throws IOException
+    {
+        Scanner scanner = new Scanner(System.in);
+        Socket s = new Socket("localhost", 5002);
+
+        InputStreamReader in = new InputStreamReader(s.getInputStream());
+        BufferedReader bf = new BufferedReader(in);
+        int number = Integer.parseInt(bf.readLine());
+
+        while(true)
+        {
+            System.out.print("Enter number between 0 and 100: ");
+            int guess = scanner.nextInt();
+            
+            PrintWriter pr = new PrintWriter(s.getOutputStream());
+            pr.println(guess);
+            pr.flush();
+
+            if(guess == number)
+            {
+                System.out.println("You have guessed the number!");
+                break;
+            }
+            else if(guess > number)
+            {
+                System.out.println("Secret number is lower than " + guess);
+            }
+            else
+            {
+                System.out.println("Secret number is higher than " + guess);
+            }
+        }
+
+        s.close();
+        scanner.close();
+    }
+}
