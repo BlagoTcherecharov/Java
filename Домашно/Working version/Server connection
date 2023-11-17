@@ -1,0 +1,80 @@
+import java.io.*; 
+//import java.text.*; 
+import java.util.*; 
+import java.net.*; 
+  
+// Server class 
+public class Server  
+{ 
+    public static void main(String[] args) throws IOException 
+    {
+        ServerSocket ss = new ServerSocket(5002);
+        Socket s = ss.accept();
+            
+        System.out.println("Client connected");
+
+        Thread t = new ClientHandler(s);
+        
+        t.start();
+
+        ss.close();
+    }
+} 
+  
+// ClientHandler class 
+class ClientHandler extends Thread
+{
+    Socket s;
+
+    public ClientHandler(Socket s)
+    {
+        this.s = s;
+    }
+
+    @Override
+    public void run() 
+    { 
+        Random randomNum = new Random();
+        int number = randomNum.nextInt(100);
+        int guess = 0;
+        try
+        {
+            PrintWriter pr = new PrintWriter(s.getOutputStream());
+            pr.println(number);
+            pr.flush();
+        }
+        catch(IOException e)
+        {
+            System.out.println("PrintWriter error!");
+        }
+
+        while(number != guess)
+        {
+
+            try
+            {
+                InputStreamReader in = new InputStreamReader(s.getInputStream());
+                BufferedReader bf = new BufferedReader(in);
+                guess = Integer.parseInt(bf.readLine());
+            } 
+            catch (NumberFormatException | IOException e) 
+            {
+                e.printStackTrace();
+            }
+
+            if(guess == number)
+            {
+                System.out.println("You have guessed the number!");
+                break;
+            }
+            else if(guess > number)
+            {
+                System.out.println("Secret number is lower than " + guess);
+            }
+            else
+            {
+                System.out.println("Secret number is higher than " + guess);
+            }
+        }
+    }
+} 
