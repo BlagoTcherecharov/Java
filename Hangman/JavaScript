@@ -1,9 +1,25 @@
-var difficulty;
-
-function difficulty_selection(){
-    difficulty = 
+function difficulty_selection()
+{
+    value = document.querySelector('#difficulty');
+    difficulty = value.value
+    alert(difficulty);
 }
 
-function letter_submit(){
+
+function letter_submit()
+{
     alert("Button clicked");
+}
+
+window.onload = function()
+{
+    word = "next";
+    var result = "";
+
+    for(i = 0; i < word.length; i++)
+    {
+        result += "_ ";
+    }
+
+    document.getElementById("word_length").innerHTML = result;
 }
