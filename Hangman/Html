@@ -2,9 +2,9 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="newcss.css" type="text/css"/>
-        <script src="newjavascript.js"></script>
-        <title>Guess the number game</title>
+        <link rel="stylesheet" href="Hangman.css" type="text/css"/>
+        <script src="Hangman.js"></script>
+        <title>Hangman Game</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -12,12 +12,12 @@
         <div class="split left">
             
             <div class = "center">
-                <select name="Choose difficulty" id="language" class = "textbox">
+                <select name="Choose difficulty" id="difficulty" class = "textbox">
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
                 </select>
-                <button onclick="letter_submit()">Submit</button>
+                <button onclick="difficulty_selection(value)">Submit</button>
             </div>
             
             <div class="centered">
@@ -31,8 +31,11 @@
         </div>
         <div class="split right">
             
+            
             <div class ="center">
-                <p>_ _ _ _ _ _</p>
+                <p id="word_length"></p>
+                <!--<p>_ _ _ _</p>-->
+                
             </div>
             
             <div class="centered">
