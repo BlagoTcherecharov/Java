@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Touristic guide</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="guide.css">
+    </head>
+    <body>
+        <ul>
+          <li><a class="active">Touristic guide</a></li>
+          <li><a>Amsterdam</a></li>
+          <li><a>Paris</a></li>
+          <li><a>Madrid</a></li>
+          <li><a>Sofia</a></li>
+        </ul>
+        <div class="column">
+            <div>
+                <img src="https://media.nomadicmatt.com/2021/amsterdamneighborhood1.jpg">
+                <h2>Amsterdam</h2>
+                <p>Hello</p>
+            </div>
+            <div>
+                <img src="https://res.klook.com/image/upload/Mobile/City/swox6wjsl5ndvkv5jvum.jpg">
+            </div>
+            <div>
+                <img src="https://media.architecturaldigest.com/photos/57ad893acfc37bc171ad8082/16:9/w_2560%2Cc_limit/madrid-travel-guide.jpg">
+            </div>
+            <div>
+                <img src="https://planetofhotels.com/guide/sites/default/files/styles/paragraph__live_banner__lb_image__1880bp/public/live_banner/sofia-1.jpg">
+            </div>
+        </div>
+    </body>
+</html>
