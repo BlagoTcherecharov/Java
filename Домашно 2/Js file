@@ -1,0 +1,43 @@
+/*function moreInfoAmsterdam() {
+    document.getElementById("exec").style.display = "block";
+}
+
+function moreInfoParis() {
+    document.getElementById("moreInfo").style.display = "block";
+}
+
+function moreInfoMadrid() {
+    document.getElementById("moreInfo").style.display = "block";
+}
+
+function moreInfoSofia() {
+    document.getElementById("moreInfo").style.display = "block";
+}
+
+function close() {
+    document.getElementById("moreInfo").style.display = "none";
+}
+
+const moreInfoAmsterdam = document.getElementById("moreInfoAmsterdam");
+const close = document.getElementById("close");
+const exec = document.getElementById("exec")
+
+moreInfoAmsterdam.addEventListener("click", () =>{
+    exec.classList.add("open");
+});
+
+close.addEventListener("click", () =>{
+    exec.classList.remove("open");
+});*/
+
+function moreInfoAmsterdam() {
+    var popup = document.getElementById("popup");
+    var background = document.getElementById("background");
+    if (popup.style.display === "none") {
+        popup.style.display = "block";
+        background.classList.add("blur");
+    } else {
+        popup.style.display = "none";
+        background.classList.remove("blur");
+    }
+}
