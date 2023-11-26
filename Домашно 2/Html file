@@ -5,30 +5,45 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="guide.css">
+        <script src="Guide.js"></script>
     </head>
     <body>
         <ul>
           <li><a class="active">Touristic guide</a></li>
-          <li><a>Amsterdam</a></li>
-          <li><a>Paris</a></li>
-          <li><a>Madrid</a></li>
-          <li><a>Sofia</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Amsterdam">Amsterdam</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Paris">Paris</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Madrid">Madrid</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Sofia">Sofia</a></li>
         </ul>
         <div class="column">
-            <div>
-                <img src="https://media.nomadicmatt.com/2021/amsterdamneighborhood1.jpg">
+            <div class="box">
+                <img src="https://media.nomadicmatt.com/2021/amsterdamneighborhood1.jpg" alt="Image of Amsterdam">
                 <h2>Amsterdam</h2>
-                <p>Hello</p>
+                <p>Amsterdam is the capital and most populated city of the Netherlands, with The Hague being the seat of government.  Amsterdam is considered an alpha world city by the Globalization and World Cities Research Network. Amsterdam's main attractions include its historic canals; the Rijksmuseum, the state museum with a vast collection of Dutch Golden Age art; the Van Gogh Museum and more!</p>
+                <button type="button" onclick="moreInfoAmsterdam()">More info</button>
             </div>
-            <div>
-                <img src="https://res.klook.com/image/upload/Mobile/City/swox6wjsl5ndvkv5jvum.jpg">
+            <div class="box">
+                <img src="https://res.klook.com/image/upload/Mobile/City/swox6wjsl5ndvkv5jvum.jpg" alt="Image of Paris">
+                <h2>Paris</h2>
+                <p>Paris is the capital and most populous city of France. Paris hosts several United Nations organizations including UNESCO, and other international organizations. Paris is especially known for its museums and architectural landmarks. The Musée d'Orsay, Musée Marmottan Monet and Musée de l'Orangerie are noted for their collections of French Impressionist art.</p>
+                <button type="button" onclick="moreInfoParis()">More info</button>
             </div>
-            <div>
-                <img src="https://media.architecturaldigest.com/photos/57ad893acfc37bc171ad8082/16:9/w_2560%2Cc_limit/madrid-travel-guide.jpg">
+            <div class="box">
+                <img src="https://media.architecturaldigest.com/photos/57ad893acfc37bc171ad8082/16:9/w_2560%2Cc_limit/madrid-travel-guide.jpg" alt="Image of Madrid">
+                <h2>Madrid</h2>
+                <p>Madrid is the capital and most populous city of Spain. The Madrid urban agglomeration has the second-largest GDP in the European Union. While Madrid possesses modern infrastructure, it has preserved the look and feel of many of its historic neighbourhoods and streets. Its landmarks include the Plaza Mayor, the Royal Palace of Madrid; the Royal Theatre with its restored 1850 Opera House and even more!</p>
+                <button type="button" onclick="moreInfoMadrid()">More info</button>
             </div>
-            <div>
-                <img src="https://planetofhotels.com/guide/sites/default/files/styles/paragraph__live_banner__lb_image__1880bp/public/live_banner/sofia-1.jpg">
+            <div class="box">
+                <img src="https://planetofhotels.com/guide/sites/default/files/styles/paragraph__live_banner__lb_image__1880bp/public/live_banner/sofia-1.jpg" alt="Image of Sofia">
+                <h2>Sofia</h2>
+                <p>Sofia is the capital and largest city of Bulgaria. Sofia is the 14th largest city in the European Union. With its cultural significance in Southeast Europe, Sofia is home to the National Opera and Ballet of Bulgaria, the National Palace of Culture, the Vasil Levski National Stadium, the Ivan Vazov National Theatre, the National Archaeological Museum, and the Serdica Amphitheatre.</p>
+                <button type="button" onclick="moreInfoSofia()">More info</button>
             </div>
+        </div>
+        <div class="popup" id="popup">
+            <a href="#" class="close" onclick="moreInfoAmsterdam()">&times;</a>
+            <p>This is a popup!</p>
         </div>
     </body>
 </html>
