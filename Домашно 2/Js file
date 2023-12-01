@@ -1,43 +1,9 @@
-/*function moreInfoAmsterdam() {
-    document.getElementById("exec").style.display = "block";
-}
-
-function moreInfoParis() {
-    document.getElementById("moreInfo").style.display = "block";
-}
-
-function moreInfoMadrid() {
-    document.getElementById("moreInfo").style.display = "block";
-}
-
-function moreInfoSofia() {
-    document.getElementById("moreInfo").style.display = "block";
-}
-
-function close() {
-    document.getElementById("moreInfo").style.display = "none";
-}
-
-const moreInfoAmsterdam = document.getElementById("moreInfoAmsterdam");
-const close = document.getElementById("close");
-const exec = document.getElementById("exec")
-
-moreInfoAmsterdam.addEventListener("click", () =>{
-    exec.classList.add("open");
+let map = new mapboxgl.Map({
+    container: 'map',
+    center: [-123.1121, 49.2569],
+    zoom: 10,
+    style: 'mapbox://styles/mapbox/streets-v11'
 });
-
-close.addEventListener("click", () =>{
-    exec.classList.remove("open");
-});*/
-
-function moreInfoAmsterdam() {
-    var popup = document.getElementById("popup");
-    var background = document.getElementById("background");
-    if (popup.style.display === "none") {
-        popup.style.display = "block";
-        background.classList.add("blur");
-    } else {
-        popup.style.display = "none";
-        background.classList.remove("blur");
-    }
-}
+        
+map.addControl(
+    new mapboxgl.NavigationControl());
