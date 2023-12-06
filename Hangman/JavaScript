@@ -1,25 +1,38 @@
+let word = "next";
+let result = [];
+
+function word_length()
+{
+    /*for(i = 0; i < word.length; i++)
+    {
+        result[i] = "_ ";
+    }
+
+    document.getElementById("word_length").innerHTML = result.join(" ");*/
+    
+    result = word.replace(word, "_ ");
+    document.getElementById("word_length").innerHTML = result;
+}
+
 function difficulty_selection()
 {
-    value = document.querySelector('#difficulty');
-    difficulty = value.value
+    let value = document.querySelector('#difficulty');
+    let difficulty = value.value;
     alert(difficulty);
 }
 
 
 function letter_submit()
 {
-    alert("Button clicked");
-}
-
-window.onload = function()
-{
-    word = "next";
-    var result = "";
-
-    for(i = 0; i < word.length; i++)
+    let letter = document.getElementById("letter").value;
+    
+    for(var i = 0; i < word.length; i++)
     {
-        result += "_ ";
+        if(letter === word[i])
+        {
+            result[i] = letter;
+            document.getElementById("word_length").innerHTML = result.join(" ");
+        }
     }
-
-    document.getElementById("word_length").innerHTML = result;
 }
+
