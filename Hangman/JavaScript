@@ -1,25 +1,37 @@
 let word = "next";
 let result = [];
 
-function word_length()
-{
-    /*for(i = 0; i < word.length; i++)
-    {
-        result[i] = "_ ";
-    }
-
-    document.getElementById("word_length").innerHTML = result.join(" ");*/
-    
-    result = word.replace(word, "_ ");
-    document.getElementById("word_length").innerHTML = result;
-}
-
 function difficulty_selection()
 {
     let value = document.querySelector('#difficulty');
     let difficulty = value.value;
     alert(difficulty);
 }
+
+function init()
+{
+    var answer = "";
+    var life = 6;
+    
+    for(i = 0; i < word.length; i++)
+    {
+        result[i] = "_ ";
+    }
+
+    document.getElementById("word_length").innerHTML = result.join(" ");
+    document.getElementById("wrong_letters").innerHTML = "Wrong letters: ";
+    document.getElementById("lives").innerHTML = "You have " + life + " lives!";
+}
+
+window.onload = init();
+
+/*
+function word_length()
+{
+    result = word.replace(word, "_ ");
+    document.getElementById("word_length").innerHTML = result;
+}
+*/
 
 
 function letter_submit()
@@ -34,5 +46,5 @@ function letter_submit()
             document.getElementById("word_length").innerHTML = result.join(" ");
         }
     }
-}
+} letter_submit();
 
