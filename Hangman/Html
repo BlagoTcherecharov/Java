@@ -3,7 +3,9 @@
 <html>
     <head>
         <link rel="stylesheet" href="Hangman.css" type="text/css"/>
-        <script src="Hangman.js"></script>
+        
+        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
         <title>Hangman Game</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +25,7 @@
             <div class="centered">
                 <form>
                     <label>Enter a letter</label><br>
-                    <input type="text" class = "textbox"><br><br>
+                    <input type="text" class = "textbox" id="letter">
                     <button onclick="letter_submit()">Submit</button>
                 </form>
             </div>
@@ -39,10 +41,11 @@
             </div>
             
             <div class="centered">
-                <p>Wrong letters: </p>
-                <p>Number of lives: </p>
+                <p id = "wrong_letters"></p>
+                <p id = "lives"></p>
             </div>
             
         </div>
     </body>
+    <script src="Hangman.js"></script>
 </html>
