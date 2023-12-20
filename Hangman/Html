@@ -3,17 +3,22 @@
 <html>
     <head>
         <link rel="stylesheet" href="Hangman.css" type="text/css"/>
-        
-        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+        <script src="Hangman.js"></script>
         <title>Hangman Game</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/realm-web@1.2.0/dist/bundle.iife.js"></script>
     </head>
     <body>
         <div class="split left">
             
             <div class = "center">
+                <select name="Choose language" id="language" class = "textbox">
+                    <option value="en">English</option>
+                    <option value="bg">Bulgarian</option>
+                </select>
+                <button onclick="language_selection(value)">Submit</button>
+
                 <select name="Choose difficulty" id="difficulty" class = "textbox">
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
@@ -23,29 +28,25 @@
             </div>
             
             <div class="centered">
-                <form>
-                    <label>Enter a letter</label><br>
-                    <input type="text" class = "textbox" id="letter">
-                    <button onclick="letter_submit()">Submit</button>
+                <form onsubmit="letter_submit(event)">
+                    <label for="letter">Enter a letter:</label>
+                    <input type="text" id="letter">
+                    <button type="submit">Submit</button>
                 </form>
+                <p id="error"></p>
             </div>
             
         </div>
         <div class="split right">
-            
-            
             <div class ="center">
                 <p id="word_length"></p>
-                <!--<p>_ _ _ _</p>-->
-                
             </div>
             
             <div class="centered">
-                <p id = "wrong_letters"></p>
-                <p id = "lives"></p>
+                <p id="wrong_letters"></p>
+                <p id="lives"></p>
             </div>
             
         </div>
     </body>
-    <script src="Hangman.js"></script>
 </html>
